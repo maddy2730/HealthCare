@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { NavLink } from 'react-router-dom';
-
+import { Link} from 'react-router-dom';
 const Sidebar = ({ toggleMainWrapperMargin }) => {
   const [isOpen, setIsOpen] = useState(true);
 
@@ -26,7 +26,7 @@ const Sidebar = ({ toggleMainWrapperMargin }) => {
                 </button>
               </div>
               <div className="links " style={{ marginLeft: mainWrapperMargin1 }}>
-                <a className="navbar-brand">Home</a>
+              <Link to='/landing' className="navbar-brand">Home</Link>
                 <a className="navbar-brand">Contact</a>
               </div>
             </div>
@@ -43,9 +43,13 @@ const Sidebar = ({ toggleMainWrapperMargin }) => {
             <button className="btn btn-outline-success" type="submit">Search</button>
           </form>
           <ul className="navbar-nav">
-            <li className="nav-item">
+          <li className="nav-item">
               <i className="fa-solid fa-house"></i>
               <NavLink className="nav-link" to="/category">Category</NavLink>
+            </li>
+            <li className="nav-item">
+              <i className="fa-solid fa-house"></i>
+              <NavLink className="nav-link" to="/User">User</NavLink>
             </li>
             <li className="nav-item">
               <i className="fa-solid fa-location-dot"></i>

@@ -4,12 +4,16 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import React from 'react';
 import { BrowserRouter as Router , Routes, Route} from 'react-router-dom';
 import Login from './Login';
+import SignUp from './SignUp';
+
 import LandingPage from './LandingPage';
-import Category from './Category';
+import Newcategory from './Newcategory';
+
 import Home from './Home';
 import  Create  from './Create';
 import Update  from './Update';
 import Read from './Read';
+import ShowData from './ShowData';
 
 const App = () => {
   return (
@@ -21,7 +25,11 @@ const App = () => {
           <Route path='/update/:id' element= {<Update />}> </Route>
           <Route path='/read/:id' element= {<Read /> }> </Route>
           <Route path = "/landing" element = {<LandingPage />}></Route>
-          <Route path="/category" element = {<Home /> } > </Route>
+          <Route path="/User" element = {<Home /> } > </Route>
+          <Route path="/category" element = {<Newcategory /> } > </Route>
+          <Route path="/signUp" element = {<SignUp/>} > </Route>
+          <Route path="/showdata" element = {<ShowData />} > </Route>
+
           </Routes>
     </Router>
   );
