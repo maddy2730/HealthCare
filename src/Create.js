@@ -59,8 +59,7 @@ export default function Create() {
                 <input type="tel" className="form-control" id="website" placeholder="Enter your website" onChange={e => setValue({ ...value, website: e.target.value })} />
               </div>
               <div className="d-flex justify-content-between">
-               {/* <button type='submit'  className="btn btn-primary">Submit</button> */}
-               <Link to='/category' className="btn btn-secondary">Submit</Link>
+               <button type='submit'  className="btn btn-primary">Submit</button>
                 <Link to='/category' className="btn btn-secondary">Back</Link>
               </div>
             </form>
