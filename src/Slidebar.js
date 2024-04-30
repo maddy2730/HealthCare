@@ -20,7 +20,7 @@ const navigate = useNavigate();
     localStorage.removeItem('authToken'); // Remove aut7hentication token if using localStorage
 
   
-    navigate('/');
+    navigate('/login');
   };
   const handleLogin = () => {
     navigate('/login');
