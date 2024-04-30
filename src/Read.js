@@ -11,7 +11,7 @@ export default function Read() {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/users/${id}`)
+    axios.get(`http://localhost:3002/users/${id}`)
       .then(res => setData(res.data))
       .catch(err => console.error('Error fetching data:', err));
   }, [id]);
@@ -40,7 +40,7 @@ export default function Read() {
           </div>
 
           <Link to={`/update/${id}`} className="btn btn-warning mr-2"  style={{marginRight: "10px"}}>Edit</Link>
-          <Link to="/category" className="btn btn-primary">Back</Link>
+          <Link to="/User" className="btn btn-primary">Back</Link>
         </div>
       </div>
     </div>

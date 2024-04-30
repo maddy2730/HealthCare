@@ -31,10 +31,11 @@ const App = () => {
           <Route path="/category" element = {<Newcategory /> } > </Route>
           <Route path="/signUp" element = {<SignUp/>} > </Route>
           <Route path="/showdata" element = {<ShowData />} > </Route>
-<Route path='/productiteam' element ={<ProductIteam />} ></Route>
+          <Route path="/productiteam" element ={<ProductIteam />}> </Route>
           </Routes>
     </Router>
   );
 };
 
 export default App;
+         

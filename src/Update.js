@@ -22,7 +22,7 @@ export default function Update() {
   );
   const navigate = useNavigate();
   useEffect(() => {
-    axios.get(`http://localhost:3001/users/${id}`)
+    axios.get(`http://localhost:3002/users/${id}`)
       .then(res =>{
         const userData = res.data;
         setValue({
@@ -34,7 +34,6 @@ export default function Update() {
         });
       }
        
-        
         )
       .catch(err => console.error('Error fetching data:', err));
   }, []);
@@ -42,7 +41,7 @@ const handleUpdate = (event)=>{
   event.preventDefault();
   axios.put('http://localhost:3001/users/'+id,value)
   .then(res => {console.log(res);
-    navigate('/category')
+    navigate('/User')
   }).catch(err => console.log(err));
 
 }
@@ -74,9 +73,12 @@ const handleUpdate = (event)=>{
                 <label htmlFor="Website" className="form-label">Website</label>
                 <input type="tel" className="form-control" id="website" placeholder="Enter your website"  value={value.website} onChange={e => setValue({ ...value, website: e.target.value })} />
               </div>
+                     
+                     <Link to='/category' className="btn btn-primary me-2">
                      <button type="submit" className="btn btn-primary me-2">Update</button>
-                     <Link to='/category' className="btn btn-primary me-2">Submit</Link>
-                     <Link to='/category'>Back</Link>                    </form>
+                     </Link>
+                     <Link to='/User' className="btn btn-primary me-2"><button type='submit'  className="btn btn-primary">Back</button></Link>
+</form>
              </div>
          </div>
      </div>

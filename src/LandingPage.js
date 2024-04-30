@@ -5,7 +5,6 @@ import Chart from "react-apexcharts";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
-
 const LandingPage = () => {
   const [date, setDate] = useState(new Date());
   const handleDateChange = (newDate) => {

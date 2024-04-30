@@ -60,7 +60,7 @@ export default function Create() {
               </div>
               <div className="d-flex justify-content-between">
                <button type='submit'  className="btn btn-primary">Submit</button>
-                <Link to='/category' className="btn btn-secondary">Back</Link>
+                <Link to='/User' className="btn btn-secondary"><button type='submit'  className="btn btn-primary">Back</button></Link>
               </div>
             </form>
           </div>

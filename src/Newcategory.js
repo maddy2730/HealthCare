@@ -17,6 +17,8 @@ const Newcategory = () => {
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
   const [selectedSubCategoryId, setSelectedSubCategoryId] = useState(null);
   const [mainWrapperMargin, setMainWrapperMargin] = useState('250px');
+  const [imageUrl, setImageUrl] = useState('');
+
   const navigate = useNavigate();
 
   const toggleMainWrapperMargin = () => {
@@ -103,7 +105,11 @@ const Newcategory = () => {
 
   const handleProductImageChange = (e) => {
     setNewProductImage(e.target.files[0]);
+    const file = e.target.files[0];
+    const imageUrl = URL.createObjectURL(file);
+    setImageUrl(imageUrl);
   };
+
 
   return (
     <>
@@ -151,6 +157,7 @@ const Newcategory = () => {
                   <input type="text" className="form-control mb-2" placeholder="Enter product name" value={newProductName} onChange={(e) => setNewProductName(e.target.value)} />
                   <input type="text" className="form-control mb-2" placeholder="Enter product description" value={newProductDescription} onChange={(e) => setNewProductDescription(e.target.value)} />
                   <input type="number" className="form-control mb-2" placeholder="Enter product price" value={newProductPrice} onChange={(e) => setNewProductPrice(e.target.value)} />
+                  <img src={imageUrl} alt="Uploaded" className="add_costume_img" />
                   <input type="file" className="form-control mb-2" onChange={handleProductImageChange} />
                   <button className="btn btn-outline-warning btn-lg" onClick={handleAddProduct}>Add Product</button>
                 </div>
