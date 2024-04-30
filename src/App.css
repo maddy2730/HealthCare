@@ -45,7 +45,7 @@ padding: 8px 12px 8px 23px;
   position: relative;
 }
 .links{
-  margin-left: 229px;
+  margin-left: 238px;
   border: none !important;
  }
 
@@ -168,4 +168,14 @@ color: white !important;
 .add-new{
   align-items: center;
   height: 100vh;
+}
+.add-category{
+  height: 260px !important;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }

@@ -8,7 +8,7 @@ const SignUp = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [confirmpassword, setConfirmPassword] = useState('');
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -27,12 +27,12 @@ const SignUp = () => {
   };
 
   const handleSignUp = async () => {
-    if (username.trim() === '' || email.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
+    if (username.trim() === '' || email.trim() === '' || password.trim() === '' || confirmpassword.trim() === '') {
       alert('Please fill in all fields');
       return;
     }
 
-    if (password !== confirmPassword) {
+    if (password !== confirmpassword) {
       alert('Passwords do not match');
       return;
     }
@@ -46,10 +46,11 @@ const SignUp = () => {
 
     try {
       // Send POST request to server to sign up user
-      const response = await axios.post('https://fdb6-2401-4900-1f3b-7ce7-70b6-8481-25c9-3ae0.ngrok-free.app/users/signup', {
+      const response = await axios.post('https://6556eeecbd4bcef8b611d6fb.mockapi.io/user', {
         username,
         email,
-        password
+        password,
+        confirmpassword
       });
 
       console.log('User signed up successfully:', response.data);
@@ -109,7 +110,7 @@ const SignUp = () => {
                     type="password"
                     id="confirmPassword"
                     className="form-control"
-                    value={confirmPassword}
+                    value={confirmpassword}
                     onChange={handleConfirmPasswordChange}
                   />
                 </div>

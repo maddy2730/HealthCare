@@ -20,10 +20,10 @@ export default function Create() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:3001/users', value)
+    axios.post('http://localhost:3002/users', value)
       .then(res => {
         console.log(res);
-        navigate('/category');
+        navigate('/User');
       })
       .catch(err => console.log(err));
   }

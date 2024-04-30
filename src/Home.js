@@ -12,7 +12,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:3001/users')
+    axios.get('http://localhost:3002/users')
       .then(res => setData(res.data))
       .catch(err => console.error('Error fetching data:', err));
   }, []);
@@ -20,7 +20,7 @@ export default function Home() {
   const handleDelete = (id) => {
     const confirm = window.confirm("Would you like to delete your data?");
     if (confirm) {
-      axios.delete(`http://localhost:3001/users/${id}`)
+      axios.delete(`http://localhost:3002/users/${id}`)
         .then(res => {
           window.location.reload();
         }).catch(err => console.log(err))

@@ -25,7 +25,7 @@ const Login = () => {
 
     try {
       // Send POST request to server to authenticate user
-      const response = await axios.post('https://fdb6-2401-4900-1f3b-7ce7-70b6-8481-25c9-3ae0.ngrok-free.app/users/login', {
+      const response = await axios.post('https://dummyjson.com/auth/login', {
         email,
         password
       });

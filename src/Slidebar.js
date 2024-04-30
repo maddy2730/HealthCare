@@ -1,19 +1,31 @@
 import React, { useState } from 'react';
 import './App.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { Link} from 'react-router-dom';
 const Sidebar = ({ toggleMainWrapperMargin }) => {
   const [isOpen, setIsOpen] = useState(true);
-
+const navigate = useNavigate();
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
     toggleMainWrapperMargin();
     toggleMainWrapperMargin1();
   };
-  const [mainWrapperMargin1, setMainWrapperMargin1] = useState('229px');
+  const [mainWrapperMargin1, setMainWrapperMargin1] = useState('238px');
   const toggleMainWrapperMargin1 = () => {
-    setMainWrapperMargin1(prevMargin => prevMargin === '229px' ? '76px' : '229px');
+    setMainWrapperMargin1(prevMargin => prevMargin === '238px' ? '76px' : '238px');
   };
+  const handleLogout = () => {
+  
+
+    localStorage.removeItem('authToken'); // Remove aut7hentication token if using localStorage
+
+  
+    navigate('/');
+  };
+  const handleLogin = () => {
+    navigate('/login');
+  };
+
   return (
     <>
       <div>
@@ -26,13 +38,16 @@ const Sidebar = ({ toggleMainWrapperMargin }) => {
                 </button>
               </div>
               <div className="links " style={{ marginLeft: mainWrapperMargin1 }}>
-              <Link to='/landing' className="navbar-brand">Home</Link>
+              <Link to='/' className="navbar-brand">Home</Link>
                 <a className="navbar-brand">Contact</a>
               </div>
             </div>
             <form className="d-flex">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
               <button className="btn btn-outline-success" type="submit">Search</button>
+              <button className="btn btn-danger mx-3" onClick={handleLogin}>Login</button>
+              <button className="btn btn-danger mx-3" onClick={handleLogout}>Logout</button>
+
             </form>
           </div>
         </nav>
