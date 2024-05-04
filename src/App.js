@@ -20,13 +20,13 @@ const App = () => {
   return (
     <Router>
     <Routes>
-          {/* <Route path = "/" element = <Login /> /> */}
-          <Route path = "/login" element = {<Login />}> </Route>
-          <Route path = "/" element = {<LandingPage />}></Route>
+          <Route path = "/" element = <Login /> />
+          {/* <Route path = "/login" element = {<Login />}> </Route> */}
+          {/* <Route path = "/" element = {<LandingPage />}></Route> */}
           <Route path='/create' element = {<Create/>}> </Route>
           <Route path='/update/:id' element= {<Update />}> </Route>
           <Route path='/read/:id' element= {<Read /> }> </Route>
-          {/* <Route path = "/landing" element = {<LandingPage />}></Route> */}
+          <Route path = "/landing" element = {<LandingPage />}></Route>
           <Route path="/User" element = {<Home /> } > </Route>
           <Route path="/category" element = {<Newcategory /> } > </Route>
           <Route path="/signUp" element = {<SignUp/>} > </Route>

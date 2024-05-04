@@ -46,7 +46,7 @@ const SignUp = () => {
 
     try {
       // Send POST request to server to sign up user
-      const response = await axios.post('https://6556eeecbd4bcef8b611d6fb.mockapi.io/user', {
+      const response = await axios.post('http://localhost:5000/main', {
         username,
         email,
         password,

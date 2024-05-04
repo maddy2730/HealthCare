@@ -22,24 +22,28 @@ const Login = () => {
       alert('Please fill in all fields');
       return;
     }
-
+  
     try {
       // Send POST request to server to authenticate user
-      const response = await axios.post('https://dummyjson.com/auth/login', {
+      const response = await axios.post('http://localhost:5000/login', {
         email,
         password
       });
-
+  
       console.log('Login successful:', response.data);
 
+      // Assuming the token is returned in response.data.token
+      // Store the token in local storage for future use
+      localStorage.setItem('token', response.data.token);
+
       // Redirect to landing page upon successful login
-      // navigate('/landing');
+      navigate('/landing');
     } catch (error) {
       console.error('Error logging in:', error);
-      alert('Invalid email or password. Please try again or sign up.');
+      alert('Invalid email or password. Please try again.');
     }
   };
-
+  
   const handleSignUp = () => {
     navigate('/signUp');
   };

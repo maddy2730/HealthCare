@@ -17,13 +17,13 @@ const navigate = useNavigate();
   const handleLogout = () => {
   
 
-    localStorage.removeItem('authToken'); // Remove aut7hentication token if using localStorage
+    localStorage.removeItem('authToken'); 
 
   
-    navigate('/login');
+    navigate('/');
   };
   const handleLogin = () => {
-    navigate('/login');
+    navigate('/');
   };
 
   return (
@@ -38,7 +38,7 @@ const navigate = useNavigate();
                 </button>
               </div>
               <div className="links " style={{ marginLeft: mainWrapperMargin1 }}>
-              <Link to='/' className="navbar-brand">Home</Link>
+              <Link to='/landing' className="navbar-brand">Home</Link>
                 <a className="navbar-brand">Contact</a>
               </div>
             </div>
